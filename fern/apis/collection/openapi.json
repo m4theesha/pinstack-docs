@@ -1,0 +1,148 @@
+{
+  "info": {
+    "title": "PinStack API",
+    "version": "1.0.0"
+  },
+  "tags": [
+    {
+      "name": "Github",
+      "description": "\"description\": \"Endpoints for generating SVG cards from public GitHub repositories and user profiles.\""
+    }
+  ],
+  "paths": {
+    "/github/user/{username}": {
+      "get": {
+        "tags": [
+          "Github"
+        ],
+        "summary": "Generate a user profile SVG card",
+        "responses": {
+          "200": {
+            "content": {
+              "image/svg+xml": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "string"
+              }
+            },
+            "description": "OK"
+          },
+          "404": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "string"
+              }
+            },
+            "description": "Not Found"
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "username",
+            "schema": {
+              "type": "string"
+            },
+            "example": "torvalds",
+            "required": true,
+            "description": "The GitHub username whose profile card should be generated."
+          },
+          {
+            "in": "query",
+            "name": "theme",
+            "schema": {
+              "type": "string"
+            },
+            "example": "github_light",
+            "description": "Color theme for the generated card."
+          }
+        ],
+        "description": "Generates an SVG card containing information about a public GitHub user profile. The returned SVG can be embedded directly in Markdown, HTML, or other applications that support SVG images.",
+        "operationId": "getGithubUserUsername",
+        "x-fern-sdk-group-name": [
+          "Github"
+        ],
+        "x-fern-sdk-method-name": "Generate a user profile SVG card"
+      }
+    },
+    "/github/repo/{owner}/{repo}": {
+      "get": {
+        "tags": [
+          "Github"
+        ],
+        "summary": "Generate a repository SVG card",
+        "responses": {
+          "200": {
+            "content": {
+              "image/svg+xml": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "string"
+              }
+            },
+            "description": "OK"
+          },
+          "404": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "string"
+              }
+            },
+            "description": "Not Found"
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "owner",
+            "schema": {
+              "type": "string"
+            },
+            "example": "m4theesha",
+            "required": true,
+            "description": "The GitHub username or organization that owns the repository."
+          },
+          {
+            "in": "path",
+            "name": "repo",
+            "schema": {
+              "type": "string"
+            },
+            "example": "pinstack",
+            "required": true,
+            "description": "The name of the GitHub repository."
+          },
+          {
+            "in": "query",
+            "name": "theme",
+            "schema": {
+              "type": "string"
+            },
+            "example": "github_light",
+            "description": "Color theme for the generated card."
+          }
+        ],
+        "description": "Generates an SVG card containing information about a public GitHub repository. The returned SVG can be embedded directly in Markdown, HTML, or other applications that support SVG images.",
+        "operationId": "getGithubRepoOwnerRepo",
+        "x-fern-sdk-group-name": [
+          "Github"
+        ],
+        "x-fern-sdk-method-name": "Generate a repository SVG card"
+      }
+    }
+  },
+  "openapi": "3.1.0",
+  "servers": [
+    {
+      "url": "https://pinstack.matheesha.workers.dev"
+    }
+  ]
+}
