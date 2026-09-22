@@ -3,3 +3,4 @@
 api:
   specs:
     - openapi: openapi.json
+      origin: https://pinstack.matheesha.workers.dev/openapi
