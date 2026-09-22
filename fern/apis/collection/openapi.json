@@ -6,8 +6,9 @@
   },
   "tags": [
     {
-      "name": "Github",
-      "description": "\"description\": \"Endpoints for generating SVG cards from public GitHub repositories and user profiles.\""
+      "name": "github",
+      "x-displayName": "GitHub",
+      "description": "PinStack generates beautiful, embeddable SVG cards for dev platforms like GitHub."
     }
   ],
   "servers": [
@@ -29,7 +30,7 @@
       "get": {
         "operationId": "getRepositoryCard",
         "tags": [
-          "Github"
+          "github"
         ],
         "summary": "Generate a repository SVG card",
         "description": "Generates an SVG card containing information about a public GitHub repository. The returned SVG can be embedded directly in Markdown, HTML, or other applications that support SVG images.",
@@ -61,7 +62,16 @@
               "type": "string",
               "enum": [
                 "github_dark",
-                "github_light"
+                "github_light",
+                "dracula",
+                "alucard",
+                "solarized",
+                "catppuccin_latte",
+                "catppuccin_frappe",
+                "catppuccin_macchiato",
+                "catppuccin_mocha",
+                "rosepine",
+                "monokai"
               ],
               "default": "github_dark",
               "description": "Color theme for the generated card.",
@@ -87,7 +97,7 @@
           "404": {
             "description": "The specified GitHub repository could not be found.",
             "content": {
-              "text/plain": {
+              "image/svg+xml": {
                 "schema": {
                   "type": "string"
                 }
@@ -101,7 +111,7 @@
       "get": {
         "operationId": "getUserCard",
         "tags": [
-          "Github"
+          "github"
         ],
         "summary": "Generate a user profile SVG card",
         "description": "Generates an SVG card containing information about a public GitHub user profile. The returned SVG can be embedded directly in Markdown, HTML, or other applications that support SVG images.",
@@ -122,7 +132,16 @@
               "type": "string",
               "enum": [
                 "github_dark",
-                "github_light"
+                "github_light",
+                "dracula",
+                "alucard",
+                "solarized",
+                "catppuccin_latte",
+                "catppuccin_frappe",
+                "catppuccin_macchiato",
+                "catppuccin_mocha",
+                "rosepine",
+                "monokai"
               ],
               "default": "github_dark",
               "description": "Color theme for the generated card.",
@@ -148,7 +167,7 @@
           "404": {
             "description": "The specified GitHub user could not be found.",
             "content": {
-              "text/plain": {
+              "image/svg+xml": {
                 "schema": {
                   "type": "string"
                 }
