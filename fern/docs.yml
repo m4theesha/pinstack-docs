@@ -20,8 +20,8 @@ navigation:
           summary: docs/pages/github-overview.mdx
 colors:
   accent-primary:
-    light: "#006fff"
-    dark: "#2988f7"
+    light: "#006cff"
+    dark: "#0076ff"
   background:
     light: "#FFFFFF"
     dark: "#010409"
